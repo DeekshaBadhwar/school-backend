@@ -16,8 +16,8 @@ async function createTeacher(body) {
         phoneNo:body.phoneNo,
         experience:body.experience,
         permanentAddress:body.permanentAddress ,
-        profilePicture:body.profilePicture
-    }
+        profilePicture:body.file.path
+       }
 console.log(details)
 const teacher= await db.Teacher.create(details)    
 
