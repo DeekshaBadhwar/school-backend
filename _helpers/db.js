@@ -18,7 +18,9 @@ async function initialize() {
     // init models and add them to the exported db object
     db.Account = require('../accounts/account.model')(sequelize);
     db.RefreshToken = require('../accounts/refresh-token.model')(sequelize);
-    db.Students=require('../students/student.model')(sequelize)
+    db.Students=require('../adminWork/students/student.model')(sequelize)
+    db.Teacher=require('../adminWork/teachers/teacher.model')(sequelize)
+
     // define relationships
     db.Account.hasMany(db.RefreshToken, { onDelete: 'CASCADE' });
     db.RefreshToken.belongsTo(db.Account);

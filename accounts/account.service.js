@@ -39,7 +39,7 @@ async function authenticate({ email, password, ipAddress }) {
 
     // return basic details and tokens
     return {
-        ...basicDetails(account),
+        role:account.role,
         jwtToken,
         refreshToken: refreshToken.token
     };
